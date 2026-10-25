@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f4fd8">
+<title>A.E.C – English Club for Kids</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap">
+<style>
+:root{--bg:#f3f6ff;--card:#fff;--ink:#16224a;--mut:#5b6690;--pri:#1f4fd8;--on:#fff;--sun:#ffd23f;--red:#e63946;--grn:#2fb344;--line:#dde4fa;--soft:#e8eeff;box-sizing:border-box}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1430;--card:#18214a;--ink:#f1f4ff;--mut:#a3aedc;--pri:#6c93ff;--on:#0e1430;--line:#2a3566;--soft:#222c5e}}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.45;padding:env(safe-area-inset-top,0) 0 calc(86px + env(safe-area-inset-bottom,0))}
+main{max-width:680px;margin:0 auto;padding:14px}
+h2,.fun{font-family:Fredoka,"Trebuchet MS",sans-serif;margin:0}
+.hero{background:linear-gradient(135deg,#1f4fd8,#3b2fa8);color:#fff;border-radius:24px;padding:18px;display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.hero svg{flex:none;width:92px;height:92px}.logo{font-size:12px;letter-spacing:1px;opacity:.9}
+.title{font-family:Fredoka,sans-serif;font-size:25px;line-height:1.05;font-weight:700}.title b:nth-child(1){color:#ffd23f}.title b:nth-child(2){color:#ff6b6b}.title b:nth-child(3){color:#5be37d}
+.badge{display:inline-block;background:var(--red);color:#fff;border-radius:99px;padding:2px 10px;font-size:12px;font-weight:700;margin-top:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:12px}.card h2{font-size:18px;margin-bottom:6px}
+.mut{color:var(--mut);font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 18px;border-radius:14px;background:var(--pri);color:var(--on);font-weight:700;text-decoration:none;border:0;font-size:16px;cursor:pointer;font-family:inherit}
+.btn.alt{background:var(--soft);color:var(--pri)}.btn.y{background:var(--sun);color:#16224a}.btn.off{background:var(--line);color:var(--mut);pointer-events:none}.btn.sm{min-height:38px;padding:0 12px;font-size:14px}.btn.block{display:flex;width:100%;margin-top:8px}
+input,select,textarea{width:100%;min-height:46px;border:2px solid var(--line);border-radius:12px;padding:10px 12px;font-size:16px;background:var(--bg);color:var(--ink);font-family:inherit;margin:6px 0}
+label{font-weight:700;font-size:14px}
+.role{display:flex;gap:12px;align-items:center;text-align:left;width:100%;background:var(--card);border:2px solid var(--line);border-radius:18px;padding:12px;font-size:15px;color:var(--ink);cursor:pointer;font-family:inherit;margin-bottom:8px}.role>span{font-size:34px}
+.bar{height:14px;background:var(--line);border-radius:99px;overflow:hidden;margin:8px 0 4px}.bar i{display:block;height:100%;background:linear-gradient(90deg,#ff7a1a,var(--sun));border-radius:99px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:8px}.chip{flex:none;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:8px 14px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}.chip.on{background:var(--pri);color:var(--on);border-color:var(--pri)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.fc{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:12px 4px;text-align:center;cursor:pointer;color:var(--ink);font-family:inherit}.fc i{display:block;font-style:normal;font-size:40px}.fc b{display:block;font-size:15px}.fc small{color:var(--mut)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.opt{font-size:52px;background:var(--card);border:3px solid var(--line);border-radius:20px;padding:10px;cursor:pointer}.opt.ok{border-color:var(--grn)}.opt.no{border-color:var(--red)}
+details{background:var(--card);border:1px solid var(--line);border-radius:18px;margin-bottom:10px;overflow:hidden}summary{padding:14px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between}
+.day{display:flex;align-items:center;gap:10px;padding:10px 14px;border-top:1px solid var(--line)}.day input{width:24px;height:24px;min-height:0;margin:0;accent-color:var(--pri);flex:none}.day .t{flex:1;min-width:0}.day.done b{color:var(--mut);text-decoration:line-through}
+.row{display:flex;gap:10px;align-items:center}.news{border-left:5px solid var(--sun);padding:6px 10px;margin:8px 0;background:var(--soft);border-radius:0 12px 12px 0}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0);z-index:5}
+nav button{flex:1;background:none;border:0;padding:9px 2px 7px;color:var(--mut);font-size:11px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px;font-family:inherit}nav button span{font-size:22px}nav button.on{color:var(--pri);font-weight:700}
+.big{font-size:56px;text-align:center}.err{color:var(--red);font-weight:700;margin:6px 0}
+.modal{position:fixed;inset:0;background:rgba(10,15,40,.7);z-index:20;display:flex;align-items:flex-end;justify-content:center}.sheet{background:var(--card);border-radius:24px 24px 0 0;padding:20px;width:100%;max-width:680px;padding-bottom:calc(20px + env(safe-area-inset-bottom,0))}
+</style>
+</head>
+<body>
+<main id="app"></main>
+<nav id="nav"></nav>
+<div id="modal"></div>
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged,sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
+import {getFirestore,doc,getDoc,setDoc,updateDoc,addDoc,deleteDoc,collection,query,where,orderBy,limit,onSnapshot,increment} from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+const firebaseConfig={apiKey:"AIzaSyAPmLzjZ0KpnaLuk2zIYZMfTvz6ILreSYI",authDomain:"aec-english-club.firebaseapp.com",projectId:"aec-english-club",storageBucket:"aec-english-club.firebasestorage.app",messagingSenderId:"736105302344",appId:"1:736105302344:web:3779802fc9c5b46e08cb7d"};
+const ADMIN_EMAIL="elielunk@gmail.com", WA="243858727821";
+const app=initializeApp(firebaseConfig), auth=getAuth(app), db=getFirestore(app);
+
+const W={"Salutations":[["👋","Hello","Bonjour"],["🌅","Good morning","Bonjour (matin)"],["🌙","Good night","Bonne nuit"],["🙏","Please","S’il te plaît"],["😊","Thank you","Merci"],["✋","Goodbye","Au revoir"]],
+"Nombres":[["1️⃣","One","1"],["2️⃣","Two","2"],["3️⃣","Three","3"],["4️⃣","Four","4"],["5️⃣","Five","5"],["6️⃣","Six","6"],["7️⃣","Seven","7"],["8️⃣","Eight","8"],["9️⃣","Nine","9"],["🔟","Ten","10"]],
+"Couleurs":[["🔴","Red","Rouge"],["🔵","Blue","Bleu"],["🟡","Yellow","Jaune"],["🟢","Green","Vert"],["⚫","Black","Noir"],["⚪","White","Blanc"],["🟠","Orange","Orange"],["🟣","Purple","Violet"],["🟤","Brown","Marron"]],
+"Famille":[["👩","Mother","Maman"],["👨","Father","Papa"],["👦","Brother","Frère"],["👧","Sister","Sœur"],["👵","Grandmother","Grand-mère"],["👴","Grandfather","Grand-père"],["👶","Baby","Bébé"]],
+"Animaux":[["🐶","Dog","Chien"],["🐱","Cat","Chat"],["🐔","Chicken","Poule"],["🐄","Cow","Vache"],["🐐","Goat","Chèvre"],["🐘","Elephant","Éléphant"],["🦁","Lion","Lion"],["🐒","Monkey","Singe"],["🐟","Fish","Poisson"],["🐦","Bird","Oiseau"]],
+"Fruits":[["🍎","Apple","Pomme"],["🍌","Banana","Banane"],["🥭","Mango","Mangue"],["🍍","Pineapple","Ananas"],["🍉","Watermelon","Pastèque"],["🍇","Grapes","Raisin"],["🥑","Avocado","Avocat"]],
+"École":[["📕","Book","Livre"],["✏️","Pencil","Crayon"],["🎒","Bag","Sac"],["✂️","Scissors","Ciseaux"],["🪑","Chair","Chaise"]]};
+const WEEKS=[["Semaine 1 — Je me présente",[[1,"Hello! Goodbye!"],[2,"My name is…"],[3,"Numbers 1–10"],[4,"Colors"],[5,"My family"],[6,"Jour des jeux"],[7,"Révision + test"]]],
+["Semaine 2 — Mon monde",[[8,"Animals"],[9,"Fruits"],[10,"Food and drinks"],[11,"My school bag"],[12,"Jour des jeux"],[13,"Révision"]]],
+["Semaine 3 — Je parle et j’agis",[[14,"Action words"],[15,"I like / I don’t like"],[16,"Feelings"],[17,"Days and weather"],[18,"My house"],[19,"Jour des jeux"],[20,"Révision"]]],
+["Semaine 4 — Je converse",[[21,"Clothes"],[22,"Places in town"],[23,"I want, I have, I can"],[24,"Polite questions"],[25,"Jour des jeux"],[26,"Ma petite histoire"],[27,"Dialogue complet"],[28,"Chansons et alphabet"],[29,"Grande révision"],[30,"Examen oral"]]]];
+const DOCS=["Livre complet (PDF)","Tableau de suivi","Diplôme"];
+const AVS=["🐰","🦁","🐘","🐒","🐶","🦄"];
+const TOUR_P=["Hello ! Moi, c’est <b>Benny le lapin</b> 🐰, la mascotte du <b>A.E.C English Club for Kids</b>. Je t’accompagne pour bien démarrer !",
+"<b>Le club :</b> c’est un club d’anglais <b>gratuit</b> pour les enfants. Il y a un atelier <b>chaque samedi</b>, et un cours en vidéo à suivre à la maison pendant <b>30 jours</b>. Le but : que votre enfant commence à <b>parler anglais en un mois</b>.",
+"<b>Étape 1 :</b> allez dans l’onglet <b>Enfants</b> et ajoutez chaque enfant avec un prénom, un animal et un <b>code secret à 4 chiffres</b>.",
+"<b>Étape 2 :</b> chaque jour, regardez la vidéo du jour avec votre enfant, faites-le répéter <b>à voix haute</b>, puis laissez-le jouer et faire les exercices du livre imprimé.",
+"<b>Étape 3 :</b> l’enseignant envoie des <b>devoirs</b>. Votre enfant les fait dans l’appli, et l’enseignant voit son résultat pour mieux l’aider.",
+"<b>Ce qu’on attend :</b> 20 à 30 minutes par jour, parler à voix haute, venir à l’atelier du samedi, et surtout <b>encourager sans punir</b>. Chaque erreur est un pas pour apprendre !",
+"<b>Confidentialité :</b> chaque famille a son propre compte. Seuls vous et l’équipe du club voyez les résultats de votre enfant. Bonne aventure ! 🎉"];
+const TOUR_S=["Hello ! Je suis <b>Benny</b> 🐰. Voici comment utiliser l’espace équipe.","<b>Gestion :</b> mettez les liens des vidéos jour par jour, envoyez des <b>devoirs</b> et publiez des annonces.","<b>Élèves :</b> voyez les résultats, les erreurs fréquentes, les conseils automatiques, et écrivez vos remarques sur chaque enfant. Vous choisissez si le parent peut les lire.","L’administrateur peut aussi nommer les enseignants dans l’onglet <b>Équipe</b>. Bon cours ! 🎉"];
+const FAQ=[["Comment ajouter mon enfant ?","Onglet « Enfants », puis « Ajouter un enfant ». Choisissez un prénom, un animal et un code secret à 4 chiffres."],["Comment mon enfant fait-il un devoir ?","Dans l’onglet Enfants, touchez le profil de l’enfant et entrez son code. Le devoir apparaît dans l’onglet « Devoir »."],["Où sont les vidéos ?","Dans l’onglet « Cours » : chaque jour a un bouton ▶ qui ouvre la vidéo."],["Combien de temps par jour ?","20 à 30 minutes : la vidéo, la répétition à voix haute et les exercices."],["Mon enfant se trompe beaucoup, que faire ?","C’est normal ! Faites-le répéter les mots à voix haute et rejouer. L’enseignant verra ses erreurs pour l’aider."],["Quand est l’atelier ?","Chaque samedi. Pour les détails, écrivez-nous sur WhatsApp depuis l’accueil."]];
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s==null?"":s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const val=id=>($(id)&&$(id).value||"").trim();
+const S={u:null,p:null,tab:"home",childId:null,ctab:"play",cat:"Salutations",Q:null,reg:false,msg:"",pendingName:"",
+ content:{videos:{},docs:{},atelier:"Chaque samedi — club d’anglais gratuit pour les enfants"},hws:[],news:[],students:[],results:[],notes:[],users:[],modal:null};
+let unsubs=[], pending=false;
+const staff=()=>S.p&&(S.p.role==="teacher"||S.p.role==="admin"), adm=()=>S.p&&S.p.role==="admin";
+const child=()=>S.students.find(c=>c.id===S.childId);
+const doneN=c=>Object.keys(c.done||{}).filter(k=>c.done[k]).length;
+const speak=t=>{try{const u=new SpeechSynthesisUtterance(t);u.lang="en-US";u.rate=.8;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}};
+const wa=t=>"https://wa.me/"+WA+"?text="+encodeURIComponent(t);
+const link=(u,l,c)=>u?`<a class="btn ${c||""}" href="${esc(u)}" target="_blank" rel="noopener">${l}</a>`:`<span class="btn off ${c||""}">Bientôt</span>`;
+const card=(t,b)=>`<div class="card"><h2>${t}</h2>${b}</div>`;
+const bunny=()=>'<svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="32" cy="26" rx="10" ry="24" fill="#9aa3b5" transform="rotate(-14 32 26)"/><ellipse cx="32" cy="28" rx="5" ry="16" fill="#ffb3c1" transform="rotate(-14 32 28)"/><ellipse cx="68" cy="26" rx="10" ry="24" fill="#9aa3b5" transform="rotate(14 68 26)"/><ellipse cx="68" cy="28" rx="5" ry="16" fill="#ffb3c1" transform="rotate(14 68 28)"/><ellipse cx="50" cy="62" rx="34" ry="30" fill="#b9c0cf"/><ellipse cx="50" cy="72" rx="20" ry="14" fill="#fff"/><circle cx="38" cy="56" r="7" fill="#fff"/><circle cx="62" cy="56" r="7" fill="#fff"/><circle cx="38" cy="57" r="4.5" fill="#2a6df4"/><circle cx="62" cy="57" r="4.5" fill="#2a6df4"/><circle cx="39.5" cy="55.5" r="1.6" fill="#fff"/><circle cx="63.5" cy="55.5" r="1.6" fill="#fff"/><ellipse cx="50" cy="68" rx="5" ry="3.6" fill="#e63946"/><path d="M50 71v5M42 77q8 6 16 0" stroke="#16224a" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M26 70h-12M26 74l-11 4M74 70h12M74 74l11 4" stroke="#16224a" stroke-width="1.5" stroke-linecap="round"/></svg>';
+const hero=s=>`<div class="hero">${bunny()}<div><div class="logo">A.E.C · ALL FOR ENGLISH CENTER</div><div class="title">ENGLISH <b>CLUB</b> <b>FOR</b> <b>KIDS</b></div><span class="badge">GRATUIT · CHAQUE SAMEDI</span>${s?`<div style="margin-top:6px">${s}</div>`:""}</div></div>`;
+const newsH=()=>S.news.length?S.news.map(n=>`<div class="news">${esc(n.text)}<div class="mut">${esc(n.by||"")}</div></div>`).join(""):`<div class="mut">Pas encore d’annonce.</div>`;
+
+/* ---------- Auth ---------- */
+const AERR={"auth/email-already-in-use":"Cet e-mail est déjà utilisé.","auth/weak-password":"Mot de passe trop court (6 caractères minimum).","auth/invalid-credential":"E-mail ou mot de passe incorrect.","auth/invalid-email":"E-mail invalide.","auth/network-request-failed":"Pas de connexion internet."};
+function authV(){return hero("Bienvenue ! Connecte-toi ou crée un compte famille.")+card(S.reg?"Créer un compte parent":"Se connecter",
+ (S.reg?`<label>Votre nom</label><input id="a_name" placeholder="Nom et prénom" autocomplete="name">`:"")+`<label>E-mail</label><input id="a_mail" type="email" autocomplete="email" placeholder="exemple@gmail.com"><label>Mot de passe</label><input id="a_pw" type="password" autocomplete="${S.reg?"new-password":"current-password"}" placeholder="6 caractères minimum">`+(S.msg?`<div class="err">${esc(S.msg)}</div>`:"")+
+ `<button class="btn block" data-a="${S.reg?"register":"login"}">${S.reg?"Créer mon compte":"Se connecter"}</button><button class="btn alt block" data-a="toggle">${S.reg?"J’ai déjà un compte":"Je n’ai pas de compte"}</button>`+(S.reg?"":`<button class="btn alt block" data-a="reset">Mot de passe oublié</button>`))}
+
+/* ---------- Données en direct ---------- */
+function listen(q,fn){unsubs.push(onSnapshot(q,fn,e=>console.warn(e.code)))}
+function subscribe(){
+ unsubs.forEach(f=>f());unsubs=[];const uid=S.u.uid;
+ listen(doc(db,"content","main"),s=>{const c=s.data();if(c){S.content={videos:c.videos||{},docs:c.docs||{},atelier:c.atelier||S.content.atelier}}render()});
+ listen(query(collection(db,"homework"),orderBy("ts","desc"),limit(10)),s=>{S.hws=s.docs.map(d=>({...d.data(),id:d.id}));render()});
+ listen(query(collection(db,"news"),orderBy("ts","desc"),limit(5)),s=>{S.news=s.docs.map(d=>d.data());render()});
+ if(staff()){
+  listen(collection(db,"students"),s=>{S.students=s.docs.map(d=>({...d.data(),id:d.id}));render()});
+  listen(query(collection(db,"results"),orderBy("ts","desc"),limit(400)),s=>{S.results=s.docs.map(d=>d.data());render()});
+  listen(query(collection(db,"notes"),orderBy("ts","desc"),limit(400)),s=>{S.notes=s.docs.map(d=>({...d.data(),id:d.id}));render()});
+  if(adm())listen(collection(db,"users"),s=>{S.users=s.docs.map(d=>({...d.data(),id:d.id}));render()});
+ }else{
+  listen(query(collection(db,"students"),where("parentUid","==",uid)),s=>{S.students=s.docs.map(d=>({...d.data(),id:d.id}));render()});
+  listen(query(collection(db,"results"),where("parentUid","==",uid)),s=>{S.results=s.docs.map(d=>d.data()).sort((a,b)=>b.ts-a.ts);render()});
+  listen(query(collection(db,"notes"),where("parentUid","==",uid),where("shared","==",true)),s=>{S.notes=s.docs.map(d=>({...d.data(),id:d.id}));render()});
+ }}
+onAuthStateChanged(auth,async u=>{
+ if(!u){S.u=null;S.p=null;unsubs.forEach(f=>f());unsubs=[];S.childId=null;S.Q=null;S.tab="home";render();return}
+ S.u=u;try{document.activeElement.blur()}catch(x){}
+ try{let r=await getDoc(doc(db,"users",u.uid));
+  if(!r.exists()){const p={name:S.pendingName||(u.email||"").split("@")[0],email:u.email,role:u.email===ADMIN_EMAIL?"admin":"parent",ts:Date.now()};await setDoc(doc(db,"users",u.uid),p);S.p=p}else S.p=r.data();
+  if(u.email===ADMIN_EMAIL&&S.p.role!=="admin"){S.p.role="admin";updateDoc(doc(db,"users",u.uid),{role:"admin"}).catch(()=>{})}
+  subscribe();if(!localStorage.getItem("aec_tour_"+u.uid)){S.modal={tour:staff()?TOUR_S:TOUR_P,i:0}}
+ }catch(e){S.msg="Impossible de charger le compte. Vérifiez les règles de sécurité.";await signOut(auth)}
+ render()});
+
+/* ---------- Quiz / devoirs ---------- */
+function qStart(h){S.Q={h,i:0,score:0,errs:[],ms:[],pick:null,res:null};qNext()}
+function qNext(){const Q=S.Q;if(Q.i>=Q.h.n)return qEnd();const all=[].concat(...Object.values(W));const p=W[Q.h.cat]||all,w=p[Math.floor(Math.random()*p.length)],o=[w];let g=0;while(o.length<4&&g++<80){const x=p[Math.floor(Math.random()*p.length)];if(!o.includes(x))o.push(x)}o.sort(()=>Math.random()-.5);Q.cur={w,o,a:o.indexOf(w)};Q.pick=null;Q.t0=Date.now();speak(w[1])}
+async function qEnd(){const Q=S.Q,c=child(),m=Q.ms.length?Math.round(Q.ms.reduce((a,b)=>a+b,0)/Q.ms.length):0;
+ const r={studentId:c.id,studentName:c.name,parentUid:c.parentUid,hw:Q.h.id||"",title:Q.h.title,score:Q.score,total:Q.h.n,errors:Q.errs,avgMs:m,ts:Date.now()};Q.res=r;
+ if(Q.h.id){try{await addDoc(collection(db,"results"),r)}catch(e){alert("Résultat non enregistré, réessayez.")}}}
+function qV(){const Q=S.Q;let h=`<div class="card"><h2>📝 ${esc(Q.h.title)}</h2>`;
+ if(Q.res){const r=Q.res;return h+`<div class="big">${r.score>=r.total*.8?"🏆":"👍"}</div><div class="fun" style="text-align:center;font-size:22px">${r.score} / ${r.total}</div>${r.errors.length?`<div class="mut" style="text-align:center">À revoir : ${esc(r.errors.join(", "))}</div>`:""}<button class="btn block" data-a="qx">Terminer</button></div>`}
+ const c=Q.cur;return h+`<div class="mut">Question ${Q.i+1} / ${Q.h.n}</div><div class="bar"><i style="width:${Q.i/Q.h.n*100}%"></i></div><button class="btn y block" data-a="hear">🔊 ${esc(c.w[1])}</button><div class="opts">${c.o.map((o,i)=>`<button class="opt${Q.pick!=null?(i===c.a?" ok":(i===Q.pick?" no":"")):""}" data-a="pick" data-v="${i}">${o[0]}</button>`).join("")}</div>${Q.pick!=null?`<button class="btn block" data-a="qn">Suivant ➡️</button>`:""}<button class="btn alt block" data-a="qx">Quitter</button></div>`}
+
+/* ---------- Vues ---------- */
+function coursV(c){let h=`<h2 class="fun" style="margin:4px 0 10px">🎬 Le cours</h2>`;WEEKS.forEach((w,i)=>{const f=c?w[1].filter(x=>(c.done||{})[x[0]]).length:0;h+=`<details${i==0?" open":""}><summary><span>${w[0]}</span><span class="mut">${c?f+"/"+w[1].length:""}</span></summary>`;
+ w[1].forEach(x=>{const dn=c&&(c.done||{})[x[0]];h+=`<div class="day${dn?" done":""}">${c?`<input type="checkbox" data-d="${x[0]}"${dn?" checked":""} aria-label="Jour ${x[0]}">`:""}<div class="t"><b>Jour ${x[0]}</b><span class="mut"> ${esc(x[1])}</span></div>${link(S.content.videos[x[0]],"▶","sm")}</div>`});h+="</details>"});return h}
+function playV(){let h=`<h2 class="fun" style="margin:4px 0 8px">🎮 Jouer et écouter</h2><div class="chips">${Object.keys(W).map(k=>`<button class="chip${k===S.cat?" on":""}" data-a="cat" data-v="${k}">${k}</button>`).join("")}</div><button class="btn y block" data-a="free" style="margin-bottom:12px">🎯 Lancer le quiz</button><div class="mut" style="margin-bottom:8px">Touche une carte pour entendre le mot.</div><div class="grid">${W[S.cat].map((w,i)=>`<button class="fc" data-a="say" data-v="${i}"><i>${w[0]}</i><b>${w[1]}</b><small>${w[2]}</small></button>`).join("")}</div>`;return h}
+function hwV(c){const todo=S.hws.filter(x=>!S.results.some(r=>r.studentId===c.id&&r.hw===x.id));
+ return `<h2 class="fun" style="margin:4px 0 10px">📝 Devoirs</h2>`+(todo.length?todo.map(x=>card(esc(x.title),`<div class="mut">${x.n} questions · ${esc(x.cat)}</div><button class="btn y block" data-a="hw" data-v="${x.id}">Commencer</button>`)).join(""):card("🎉 Tout est fait !",`<div class="mut">Pas de devoir en attente. Va jouer un peu !</div>`))}
+function childV(){const c=child();if(!c){S.childId=null;return homeV()}
+ if(S.Q)return qV();
+ const head=`<div class="hero">${bunny()}<div><div class="title" style="font-size:22px">Hello, ${esc(c.name)} ! ${c.avatar||""}</div><div style="margin-top:6px">⭐ ${c.stars||0} étoiles · ${doneN(c)}/30 jours</div><div class="bar"><i style="width:${Math.round(doneN(c)/30*100)}%"></i></div></div></div>`;
+ return head+(S.ctab==="play"?playV():S.ctab==="hw"?hwV(c):coursV(c))}
+function homeV(){let h=hero(`Bonjour <b>${esc(S.p.name)}</b> !`);
+ if(!staff()){
+  h+=card("🧒 Mes enfants",S.students.length?S.students.map(c=>`<button class="role" data-a="enter" data-v="${c.id}"><span>${c.avatar||"🐰"}</span><div><b>${esc(c.name)}</b><div class="mut">⭐ ${c.stars||0} · ${doneN(c)}/30 jours</div></div></button>`).join(""):`<div class="mut">Ajoutez votre premier enfant dans l’onglet « Enfants ».</div>`);
+  const sh=S.notes.filter(n=>n.shared);if(sh.length)h+=card("💬 Message de l’enseignant",sh.slice(0,3).map(n=>`<div class="news"><b>${esc(n.studentName)}</b> : ${esc(n.text)}</div>`).join(""));
+ }
+ h+=card("📣 Annonces",newsH())+card("📍 Atelier du samedi",`<div class="mut">${esc(S.content.atelier)}</div><a class="btn block" href="${wa("Bonjour, j’ai une question sur le club d’anglais.")}" target="_blank" rel="noopener">💬 Écrire sur WhatsApp</a>`);
+ h+=card("📥 Téléchargements",DOCS.map((d,i)=>`<div class="row" style="padding:8px 0;border-top:1px solid var(--line)"><span style="font-size:26px">📄</span><b style="flex:1">${d}</b>${link(S.content.docs["d"+i],"⬇","sm")}</div>`).join(""));return h}
+function kidsV(){return `<h2 class="fun" style="margin:4px 0 10px">🧒 Mes enfants</h2>`+S.students.map(c=>`<div class="card row"><span class="big" style="font-size:36px">${c.avatar||"🐰"}</span><div style="flex:1"><b>${esc(c.name)}</b><div class="mut">⭐ ${c.stars||0} · ${doneN(c)}/30 jours</div></div><button class="btn sm" data-a="enter" data-v="${c.id}">Ouvrir</button></div>`).join("")+
+ card("➕ Ajouter un enfant",`<label>Prénom</label><input id="k_name" placeholder="Prénom de l’enfant"><label>Son animal</label><select id="k_av">${AVS.map(a=>`<option>${a}</option>`).join("")}</select><label>Code secret (4 chiffres)</label><input id="k_pin" inputmode="numeric" maxlength="4" placeholder="1234"><button class="btn block" data-a="addkid">Ajouter</button>`)}
+function aideV(){return `<h2 class="fun" style="margin:4px 0 10px">🐰 Benny, ton aide</h2><div class="card row">${bunny().replace("<svg",'<svg style="width:70px;height:70px;flex:none"')}<div class="mut">Moi, c’est Benny ! Voici les réponses aux questions les plus fréquentes.</div></div><button class="btn y block" data-a="tour" style="margin-bottom:12px">▶ Revoir la présentation</button>`+FAQ.map(f=>`<details><summary>${f[0]}</summary><div style="padding:0 14px 14px" class="mut">${f[1]}</div></details>`).join("")+`<button class="btn alt block" data-a="out" style="margin-top:12px">Se déconnecter (${esc(S.p.email)})</button>`}
+function stats(c){const rs=S.results.filter(r=>r.studentId===c.id),n=rs.length,ok=rs.reduce((a,r)=>a+r.score,0),tot=rs.reduce((a,r)=>a+r.total,0),ms=n?rs.reduce((a,r)=>a+(r.avgMs||0),0)/n:0,er={};rs.forEach(r=>(r.errors||[]).forEach(e=>er[e]=(er[e]||0)+1));return{n,pc:tot?Math.round(ok/tot*100):0,sec:Math.round(ms/100)/10,er:Object.keys(er).sort((a,b)=>er[b]-er[a]).slice(0,3),last:rs.length?Math.max(...rs.map(r=>r.ts)):0}}
+function advice(s){const a=[];if(!s.n)return["N’a pas encore fait de devoir : l’encourager à commencer."];if(s.pc<60)a.push("Difficultés : refaire les mots ratés à l’oral, en petit groupe.");else if(s.pc>=85)a.push("Très bon niveau : proposer des phrases plus longues.");else a.push("Bon progrès : continuer la répétition quotidienne.");if(s.sec>8)a.push("Hésite beaucoup : répéter les mots à voix haute avant le quiz.");if(Date.now()-s.last>7*864e5)a.push("Inactif depuis plus d’une semaine : relancer le parent.");return a}
+function manageV(){let d="";for(let i=1;i<=30;i++)d+=`<option value="${i}">Jour ${i}</option>`;
+ let h=`<h2 class="fun" style="margin:4px 0 10px">🧰 ${adm()?"Administration":"Espace enseignant"}</h2>`+card("🎬 Lien vidéo d’un jour",`<select id="m_day">${d}</select><input id="m_url" placeholder="Lien YouTube / Drive"><button class="btn block" data-a="vid">Enregistrer le lien</button>`)+
+ card("📝 Envoyer un devoir",`<input id="m_title" placeholder="Titre (ex. Les couleurs)"><select id="m_cat">${Object.keys(W).map(c=>`<option>${c}</option>`).join("")}</select><select id="m_n"><option>5</option><option>10</option></select><button class="btn block" data-a="hwnew">Envoyer aux élèves</button>`)+
+ card("📣 Publier une annonce",`<textarea id="m_news" rows="3" placeholder="Message pour tous les parents"></textarea><button class="btn block" data-a="post">Publier</button>`);
+ if(adm())h+=card("⚙️ Réglages du club",`<label>Atelier du samedi</label><input id="a_at" value="${esc(S.content.atelier)}">`+DOCS.map((x,i)=>`<label>${x}</label><input id="a_d${i}" value="${esc(S.content.docs["d"+i]||"")}" placeholder="Lien du fichier">`).join("")+`<button class="btn block" data-a="cfg">Enregistrer</button>`);
+ return h}
+function studV(){return `<h2 class="fun" style="margin:4px 0 10px">👥 Élèves</h2>`+(S.students.length?S.students.map(c=>{const s=stats(c),nt=S.notes.filter(n=>n.studentId===c.id).slice(0,3);
+ return card(`${c.avatar||"🐰"} ${esc(c.name)}`,`<div class="mut">Parent : ${esc(c.parentName||"")} · ${doneN(c)}/30 jours · ${s.n} devoir(s) · réussite ${s.pc} % · ${s.sec} s/question</div><div class="bar"><i style="width:${s.pc}%"></i></div>${s.er.length?`<div class="mut">Erreurs : ${esc(s.er.join(", "))}</div>`:""}<div style="font-size:14px">💡 ${esc(advice(s).join(" "))}</div>${nt.map(n=>`<div class="news">${esc(n.text)}<div class="mut">${esc(n.by)}${n.shared?" · vu par le parent":" · privé"}</div></div>`).join("")}<input id="n_${c.id}" placeholder="Remarque sur le comportement…"><label class="row" style="font-weight:400"><input type="checkbox" id="s_${c.id}" style="width:22px;min-height:0;margin:0"> Visible par le parent</label><button class="btn alt sm" data-a="note" data-v="${c.id}">Ajouter la remarque</button>`)}).join(""):card("Aucun élève",`<div class="mut">Les enfants inscrits par les parents apparaîtront ici.</div>`))}
+function teamV(){return `<h2 class="fun" style="margin:4px 0 10px">👑 Équipe</h2>`+card("Comptes inscrits",`<div class="mut" style="margin-bottom:6px">Nommez les enseignants parmi les comptes inscrits.</div>`+S.users.map(u=>`<div class="row" style="padding:8px 0;border-top:1px solid var(--line)"><div style="flex:1;min-width:0"><b>${esc(u.name)}</b><div class="mut" style="overflow:hidden;text-overflow:ellipsis">${esc(u.email)} · ${esc(u.role)}</div></div>${u.role==="admin"?"":`<button class="btn alt sm" data-a="role" data-v="${u.id}|${u.role==="teacher"?"parent":"teacher"}">${u.role==="teacher"?"Retirer":"Nommer enseignant"}</button>`}</div>`).join(""))}
+function modalV(){const m=S.modal;if(!m){$("modal").innerHTML="";return}
+ if(m.tour){const last=m.i>=m.tour.length-1;$("modal").innerHTML=`<div class="modal"><div class="sheet"><div class="row">${bunny().replace("<svg",'<svg style="width:84px;height:84px;flex:none"')}<div style="font-size:16px">${m.tour[m.i]}</div></div><div class="bar"><i style="width:${(m.i+1)/m.tour.length*100}%"></i></div><button class="btn block" data-a="tournext">${last?"C’est parti !":"Suivant ➡️"}</button><button class="btn alt block" data-a="tourskip">Passer</button></div></div>`}}
+function render(){
+ const ae=document.activeElement;if(ae&&["INPUT","TEXTAREA","SELECT"].includes(ae.tagName)&&$("app").contains(ae)&&ae.type!=="checkbox"){pending=true;return}pending=false;
+ const a=$("app"),n=$("nav");if(!S.u||!S.p){a.innerHTML=authV();n.innerHTML="";modalV();return}
+ let tabs;if(S.childId&&child()){tabs=[["play","🎮","Jouer"],["hw","📝","Devoir"],["cours","🎬","Cours"],["exit","🚪","Sortir"]];a.innerHTML=childV();n.innerHTML=tabs.map(t=>`<button data-a="ctab" data-v="${t[0]}" class="${S.ctab===t[0]&&!S.Q?"on":""}"><span>${t[1]}</span>${t[2]}</button>`).join("");modalV();return}
+ S.childId=null;
+ tabs=staff()?[["home","🏠","Accueil"],["manage","🧰","Gestion"],["stud","👥","Élèves"]].concat(adm()?[["team","👑","Équipe"]]:[],[["aide","🐰","Aide"]]):[["home","🏠","Accueil"],["kids","🧒","Enfants"],["cours","🎬","Cours"],["aide","🐰","Aide"]];
+ const V={home:homeV,kids:kidsV,cours:()=>coursV(null),aide:aideV,manage:manageV,stud:studV,team:teamV};if(!V[S.tab])S.tab="home";
+ a.innerHTML=V[S.tab]();n.innerHTML=tabs.map(t=>`<button data-a="tab" data-v="${t[0]}" class="${S.tab===t[0]?"on":""}"><span>${t[1]}</span>${t[2]}</button>`).join("");modalV()}
+
+/* ---------- Actions ---------- */
+const ok=()=>alert("Enregistré ✅"), ko=()=>alert("Non enregistré : droits insuffisants ou pas de connexion.");
+document.addEventListener("focusout",()=>{if(pending)setTimeout(render,150)});
+document.addEventListener("change",async e=>{const d=e.target.getAttribute&&e.target.getAttribute("data-d");if(d&&S.childId){const o=[...document.querySelectorAll("details")].map(x=>x.open);try{await updateDoc(doc(db,"students",S.childId),{["done."+d]:e.target.checked})}catch(x){ko()}[...document.querySelectorAll("details")].forEach((x,i)=>x.open=o[i])}});
+document.addEventListener("click",async e=>{const t=e.target.closest("[data-a]");if(!t)return;try{document.activeElement.blur()}catch(x){}const a=t.dataset.a,v=t.dataset.v;
+ try{switch(a){
+ case"toggle":S.reg=!S.reg;S.msg="";render();break;
+ case"login":S.msg="";await signInWithEmailAndPassword(auth,val("a_mail"),val("a_pw"));break;
+ case"register":{const nm=val("a_name");if(!nm){S.msg="Écrivez votre nom.";render();break}S.pendingName=nm;S.msg="";await createUserWithEmailAndPassword(auth,val("a_mail"),val("a_pw"));break}
+ case"reset":{const m=val("a_mail");if(!m){S.msg="Écrivez d’abord votre e-mail.";render();break}await sendPasswordResetEmail(auth,m);S.msg="E-mail de réinitialisation envoyé ✅";render();break}
+ case"out":await signOut(auth);break;
+ case"tab":S.tab=v;render();window.scrollTo(0,0);break;
+ case"ctab":S.ctab=v;S.Q=null;render();window.scrollTo(0,0);break;
+ case"exit":S.childId=null;S.Q=null;S.tab="kids";render();break;
+ case"tour":S.modal={tour:staff()?TOUR_S:TOUR_P,i:0};render();break;
+ case"tournext":if(S.modal.i>=S.modal.tour.length-1){localStorage.setItem("aec_tour_"+S.u.uid,"1");S.modal=null}else S.modal.i++;render();break;
+ case"tourskip":localStorage.setItem("aec_tour_"+S.u.uid,"1");S.modal=null;render();break;
+ case"addkid":{const nm=val("k_name"),pin=val("k_pin");if(!nm||!/^\d{4}$/.test(pin))return alert("Écrivez le prénom et un code de 4 chiffres.");await addDoc(collection(db,"students"),{name:nm,avatar:val("k_av"),pin,parentUid:S.u.uid,parentName:S.p.name,stars:0,done:{},ts:Date.now()});$("k_name").value="";$("k_pin").value="";break}
+ case"enter":{const c=S.students.find(x=>x.id===v);const p=prompt("Code secret de "+c.name+" :");if(p===null)break;if(p!==c.pin)return alert("Code incorrect.");S.childId=v;S.ctab="play";S.Q=null;render();window.scrollTo(0,0);break}
+ case"cat":S.cat=v;render();break;
+ case"say":speak(W[S.cat][+v][1]);break;
+ case"free":qStart({id:"",title:"Quiz — "+S.cat,cat:S.cat,n:10});render();break;
+ case"hw":qStart(S.hws.find(x=>x.id===v));render();break;
+ case"hear":speak(S.Q.cur.w[1]);break;
+ case"pick":{const Q=S.Q;if(Q.pick!=null)break;Q.ms.push(Date.now()-Q.t0);Q.pick=+v;if(Q.pick===Q.cur.a){Q.score++;updateDoc(doc(db,"students",S.childId),{stars:increment(1)}).catch(()=>{})}else Q.errs.push(Q.cur.w[1]);render();break}
+ case"qn":S.Q.i++;qNext();render();break;
+ case"qx":S.Q=null;render();break;
+ case"vid":await setDoc(doc(db,"content","main"),{videos:{[val("m_day")]:val("m_url")}},{merge:true});ok();break;
+ case"hwnew":await addDoc(collection(db,"homework"),{title:val("m_title")||val("m_cat"),cat:val("m_cat"),n:+val("m_n"),by:S.p.name,ts:Date.now()});alert("Devoir envoyé ✅");break;
+ case"post":{const x=val("m_news");if(!x)break;await addDoc(collection(db,"news"),{text:x,by:S.p.name,ts:Date.now()});$("m_news").value="";ok();break}
+ case"cfg":{const docs={};DOCS.forEach((_,i)=>docs["d"+i]=val("a_d"+i));await setDoc(doc(db,"content","main"),{atelier:val("a_at"),docs},{merge:true});ok();break}
+ case"note":{const x=val("n_"+v);if(!x)break;const c=S.students.find(s=>s.id===v);await addDoc(collection(db,"notes"),{studentId:v,studentName:c.name,parentUid:c.parentUid,text:x,shared:$("s_"+v).checked,by:S.p.name,ts:Date.now()});$("n_"+v).value="";render();break}
+ case"role":{const[id,r]=v.split("|");await updateDoc(doc(db,"users",id),{role:r});break}
+ }}catch(err){if(["login","register"].includes(a)){S.msg=AERR[err.code]||"Erreur. Réessayez.";render()}else{console.warn(err);ko()}}});
+render();
+</script>
+</body>
+</html>
